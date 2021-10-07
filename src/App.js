@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import LandingPage from "./pages/LandingPage";
+import ContactForm from "./pages/ContactForm";
+import ScrollUpButton from "react-scroll-up-button";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollUpButton />
+      <ScrollToTop />
+      <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+        <Route exact path="/contact">
+          <ContactForm />
+        </Route>
+      </Switch>
+    </>
   );
 }
 
