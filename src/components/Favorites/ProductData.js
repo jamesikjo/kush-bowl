@@ -1,36 +1,35 @@
-import halfHalf from "../../images/master-both.jpg";
-import ogBeef from "../../images/og-beef.jpg";
-import spamMusubi from "../../images/spam-musubi.jpg";
-import hotLink from "../../images/hotlink.jpg";
-import masterChicken from "../../images/master-chicken.jpg";
-import tofuBowl from "../../images/tofu-bowl.jpg";
+import halfHalf from "../../assets/images/master-both.jpg";
+import ogBeef from "../../assets/images/og-beef.jpg";
+import spamMusubi from "../../assets/images/spam-musubi.jpg";
+import hotLink from "../../assets/images/hotlink.jpg";
+import masterChicken from "../../assets/images/master-chicken.jpg";
+import tofuBowl from "../../assets/images/tofu-bowl.jpg";
+import spicyPork from "../../assets/images/spicy-pork.jpg";
+import hotLinkFR from "../../assets/images/hotlink-friedrice.jpg";
 
 export const productData = [
   {
     img: `${halfHalf}`,
     alt: "meun item 1",
     name: "Half Chicken Half Beef",
-    desc: "grilled teriyaki beef & chicken, rice",
-    price: "$10.99",
-    button: "Add to Cart",
-    category: "bowls",
-  },
-  {
-    img: `${ogBeef}`,
-    alt: "meun item 2",
-    name: "OG Beef",
-    desc: "grilled teriyaki beef, rice",
-    price: "$10.99",
+    desc: "grilled teriyaki chicken & beef, rice",
     button: "Add to Cart",
     category: "bowls",
   },
 
   {
+    img: `${hotLinkFR}`,
+    alt: "meun item 2",
+    name: "Hot Link Fried Rice",
+    desc: "fire hot link, egg, rice",
+    button: "Add to Cart",
+    category: "bowls",
+  },
+  {
     img: `${masterChicken}`,
     alt: "meun item 3",
     name: "Master Chicken",
     desc: "grilled teriyaki chicken, rice",
-    price: "$9.99",
     button: "Add To Cart",
     category: "bowls",
   },
@@ -38,8 +37,7 @@ export const productData = [
     img: `${hotLink}`,
     alt: "meun item 4",
     name: "Bacon Fried Rice",
-    desc: "fire hot link, egg, rice",
-    price: "$9.99",
+    desc: "fire hot link, egg, bacon, rice",
     button: "Add To Cart",
     category: "plates",
   },
@@ -48,7 +46,6 @@ export const productData = [
     alt: "meun item 5",
     name: "Spam Musubi",
     desc: "spam & rice, wrapped in seaweed",
-    price: "$9.99",
     button: "Add To Cart",
     category: "sides",
   },
@@ -57,25 +54,22 @@ export const productData = [
     alt: "meun item 6",
     name: "Tofu Bowl",
     desc: "fried tofu on rice, teriyaki glaze",
-    price: "$9.99",
     button: "Add To Cart",
     category: "bowls",
   },
   {
-    img: `${halfHalf}`,
-    alt: "meun item 1",
-    name: "Half Chicken Half Beef",
-    desc: "grilled teriyaki beef & chicken, rice",
-    price: "$10.99",
+    img: `${spicyPork}`,
+    alt: "meun item 7",
+    name: "Spicy Pork",
+    desc: "grilled teriyaki pork, rice, teriyaki glaze",
     button: "Add to Cart",
     category: "bowls",
   },
   {
-    img: `${halfHalf}`,
-    alt: "meun item 1",
-    name: "Half Chicken Half Beef",
-    desc: "grilled teriyaki beef & chicken, rice",
-    price: "$10.99",
+    img: `${ogBeef}`,
+    alt: "meun item 8",
+    name: "OG Beef",
+    desc: "grilled teriyaki beef, rice",
     button: "Add to Cart",
     category: "bowls",
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import yelpLogo from "../../images/yelp-logo.png";
+import yelpLogo from "../../assets/images/yelp-logo.png";
 
 const YelpButtonLink = () => {
   return (

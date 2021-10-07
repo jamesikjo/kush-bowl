@@ -1,19 +1,22 @@
-import React from "react";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   makeStyles,
   Menu,
-  MenuItem,
   Hidden,
   Container,
+  useTheme,
+  useMediaQuery,
 } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import mainLogo from "../../images/main-logo.png";
+import mainLogo from "../../assets/images/main-logo.png";
 import NavLinks from "./NavLinks";
+import MenuDialog from "../../Menu";
+import NavMenuList from "./NavMenuList";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -27,25 +30,17 @@ const useStyles = makeStyles((theme) => ({
   logoBtn: {
     flexGrow: 1,
   },
-  navBtn: {
-    marginRight: "1rem",
-    fontSize: "1rem",
-    "&.active": {
-      fontWeight: "bold",
-    },
-    "&:hover": {
-      fontWeight: "bold",
-      color: theme.palette.primary.main,
-    },
-  },
 }));
+
 const NavBar = ({ inViewInfo }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [openMenuPdf, setOpenMenuPdf] = useState(false);
 
   const history = useHistory();
   const { pathname } = history.location;
-
   const classes = useStyles({ inViewInfo, pathname });
+  const theme = useTheme();
+  const matchMD = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -55,37 +50,37 @@ const NavBar = ({ inViewInfo }) => {
     setAnchorEl(null);
   };
 
+  const handleMenuOpen = () => {
+    setAnchorEl(null);
+    setOpenMenuPdf(true);
+  };
+
   return (
     <nav>
       <AppBar position="fixed" className={classes.appBar}>
-        <Container maxWidth="lg">
-          <Toolbar disableGutters>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters={matchMD && true}>
             <Hidden mdUp>
               <IconButton edge="start" onClick={handleClick} aria-label="menu">
                 <MenuIcon />
               </IconButton>
               <Menu
-                id="simple-menu"
+                id="nav-menu"
                 anchorEl={anchorEl}
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose} component={Link} to={"/"}>
-                  Home
-                </MenuItem>
-                <MenuItem
-                  onClick={handleClose}
-                  component={Link}
-                  to={"/takeout/bowls"}
-                >
-                  Order Takeout
-                </MenuItem>
-                <NavLink onClick={handleClose} to={"/contact"}>
-                  Contact Us
-                </NavLink>
+                <NavMenuList
+                  handleClose={handleClose}
+                  handleMenuOpen={handleMenuOpen}
+                />
               </Menu>
             </Hidden>
+            <MenuDialog
+              open={openMenuPdf}
+              handleMenuClose={() => setOpenMenuPdf(false)}
+            />
             <Hidden only={["xs", "sm"]}>
               <div className={classes.logoBtn}>
                 <Button
@@ -97,9 +92,7 @@ const NavBar = ({ inViewInfo }) => {
                   <img src={mainLogo} alt="nav logo" style={{ height: 55 }} />
                 </Button>
               </div>
-              <div>
-                <NavLinks />
-              </div>
+              <NavLinks handleMenuOpen={handleMenuOpen} />
             </Hidden>
           </Toolbar>
         </Container>

@@ -7,7 +7,7 @@ import {
   Box,
   useTheme,
 } from "@material-ui/core";
-import catering from "../../images/catering.jpg";
+import catering from "../../assets/images/catering.jpg";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({

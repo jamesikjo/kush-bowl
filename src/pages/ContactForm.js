@@ -132,19 +132,16 @@ const ContactForm = () => {
                 label="message"
                 name="message"
                 InputLabelProps={{ style: { fontSize: 0 }, shrink: false }}
-                style={{ paddingBottom: "1rem" }}
+                style={{ marginBottom: "1rem" }}
               />
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginBottom: "1rem" }}>
               <Button
                 variant="contained"
                 color="primary"
                 type="submit"
                 fullWidth
-                style={{
-                  fontSize: 14,
-                }}
               >
                 Send Message
               </Button>
@@ -153,7 +150,7 @@ const ContactForm = () => {
 
           {success && (
             <Grid item xs={12}>
-              <Typography color="primary" variant="body1">
+              <Typography color="primary" variant="body1" align="center">
                 Thanks for your message!
               </Typography>
             </Grid>

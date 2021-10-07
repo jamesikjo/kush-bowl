@@ -8,8 +8,8 @@ import {
   useMediaQuery,
   Box,
 } from "@material-ui/core";
-import bowlLogo from "../../images/bowl-logo.png";
-import plate from "../../images/kush-plate.png";
+import bowlLogo from "../../assets/images/bowl-logo.png";
+import plate from "../../assets/images/kush-plate.png";
 import YelpButtonLink from "./YelpButtonLink";
 import Hours from "./Hours";
 

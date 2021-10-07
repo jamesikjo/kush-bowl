@@ -74,6 +74,7 @@ export default function ProductCard({ name, desc, img, category }) {
           href="https://squareup.com/us/en/online-store"
           rel="noopener noreferrer"
           target="_blank"
+          style={{ textDecoration: "inherit" }}
         >
           <Button
             variant="outlined"

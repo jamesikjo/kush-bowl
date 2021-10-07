@@ -7,9 +7,9 @@ import {
   Box,
   Button,
 } from "@material-ui/core";
-import hero from "../../images/hero-img.png";
-import mainLogo from "../../images/main-logo.png";
-import MenuDialog from "./MenuDialog";
+import hero from "../../assets/images/hero-img.png";
+import mainLogo from "../../assets/images/main-logo.png";
+import MenuDialog from "../../Menu";
 
 function Hero() {
   const [open, setOpen] = useState(false);
@@ -20,12 +20,12 @@ function Hero() {
     setOpen(true);
   };
 
-  const handleMenuClose = (value) => {
+  const handleMenuClose = () => {
     setOpen(false);
   };
 
   return (
-    <Box component="main" style={{ height: "50%", marginBottom: "2em" }}>
+    <Box component="main" style={{ height: "50%", marginBottom: "3em" }}>
       <Grid container direction="column" justifyContent="center">
         <Grid item container direction="column" align="center">
           <Grid item>

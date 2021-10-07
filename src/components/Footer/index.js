@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, Typography, Grid, Divider, Link } from "@material-ui/core";
-import footerLogo from "../../images/footer-logo.png";
+import footerLogo from "../../assets/images/footer-logo.png";
 import SocialIconLinks from "./SocialIconLinks";
 
 const useStyles = makeStyles((theme) => ({

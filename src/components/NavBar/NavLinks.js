@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   navBtn: {
     marginLeft: "0.5em",
-    fontSize: "1em",
+    fontSize: "0.9em",
     "&.active": {
       fontWeight: "bold",
     },
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavLinks = () => {
+const NavLinks = ({ handleMenuOpen }) => {
   const classes = useStyles();
   const theme = useTheme();
   return (
@@ -31,6 +31,13 @@ const NavLinks = () => {
         className={classes.navBtn}
       >
         Home
+      </Button>
+      <Button
+        variant="text"
+        onClick={handleMenuOpen}
+        className={classes.navBtn}
+      >
+        Menu
       </Button>
       <a
         href="https://kushbowl.square.site/"
