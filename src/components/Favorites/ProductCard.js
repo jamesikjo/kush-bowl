@@ -71,7 +71,7 @@ export default function ProductCard({ name, desc, img, category }) {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <Link
-          href="https://squareup.com/us/en/online-store"
+          href="https://kushbowl.square.site/"
           rel="noopener noreferrer"
           target="_blank"
           style={{ textDecoration: "inherit" }}
