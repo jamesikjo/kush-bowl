@@ -8,7 +8,7 @@ import {
   Button,
 } from "@material-ui/core";
 import hero from "../../assets/images/hero-img.png";
-import mainLogo from "../../assets/images/main-logo.png";
+import kushLogo from "../../assets/images/kush-logo.png";
 import MenuDialog from "../../Menu";
 
 function Hero() {
@@ -30,7 +30,7 @@ function Hero() {
         <Grid item container direction="column" align="center">
           <Grid item>
             <img
-              src={mainLogo}
+              src={kushLogo}
               alt="store logo"
               style={{ width: matchSM ? 280 : 340 }}
             />

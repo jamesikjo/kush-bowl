@@ -4,8 +4,13 @@ import { Typography } from "@material-ui/core";
 const Hours = () => {
   return (
     <>
-      <Typography color="primary" variant="h5" gutterBottom>
-        <b>Current Hours</b>
+      <Typography
+        color="primary"
+        variant="h4"
+        gutterBottom
+        style={{ fontWeight: "bold" }}
+      >
+        Current Hours
       </Typography>
       <Typography color="primary" component="h6" variant="subtitle1">
         Monday – Friday | <b>9AM – 7:30PM </b>

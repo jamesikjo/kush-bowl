@@ -14,6 +14,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import mainLogo from "../../assets/images/main-logo.png";
+import kushLogo from "../../assets/images/kush-logo.png";
 import NavLinks from "./NavLinks";
 import MenuDialog from "../../Menu";
 import NavMenuList from "./NavMenuList";
@@ -89,7 +90,7 @@ const NavBar = ({ inViewInfo }) => {
                   onClick={() => history.push("/")}
                   style={{ backgroundColor: "transparent" }}
                 >
-                  <img src={mainLogo} alt="nav logo" style={{ height: 55 }} />
+                  <img src={kushLogo} alt="nav logo" style={{ height: 55 }} />
                 </Button>
               </div>
               <NavLinks handleMenuOpen={handleMenuOpen} />

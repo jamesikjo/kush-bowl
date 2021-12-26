@@ -32,7 +32,7 @@ const Catering = () => {
       >
         <Grid item style={{ marginBottom: "0.5rem" }}>
           <Typography
-            variant="h5"
+            variant="h4"
             style={{ color: theme.palette.primary.contrastText }}
           >
             Catering Available
@@ -40,7 +40,7 @@ const Catering = () => {
         </Grid>
         <Grid item>
           <Button
-            variant="outlined"
+            variant="contained"
             color="secondary"
             onClick={() => location.push("/contact")}
           >

@@ -10,8 +10,13 @@ export default function Favorites() {
       component="section"
       style={{ paddingTop: "4.5em", paddingBottom: "5em" }}
     >
-      <Typography color="primary" variant="h5" align="center">
-        <b>Kush Bowl Signature Favorites</b>
+      <Typography
+        color="primary"
+        variant="h4"
+        align="center"
+        style={{ fontWeight: "bold" }}
+      >
+        Kush Bowl Signature Favorites
       </Typography>
       <Grid
         container

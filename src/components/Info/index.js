@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   mainContainer: {
     height: "100%",
     backgroundColor: "#e8f4ea",
-    paddingTop: "4.5rem",
+    paddingTop: "5rem",
     paddingBottom: "5rem",
   },
 });
@@ -30,9 +30,14 @@ const Info = (props, ref) => {
   return (
     <Box ref={ref} className={classes.mainContainer} component="section">
       <Grid container direction="column" alignItems="center">
-        <Grid item className={classes.mainTitle}>
-          <Typography color="primary" variant="h5" gutterBottom>
-            <b>A Higher Dining Experience</b>
+        <Grid item className={classes.mainTitle} align="center">
+          <Typography
+            color="primary"
+            variant="h4"
+            gutterBottom
+            style={{ fontWeight: "bold" }}
+          >
+            A Higher Dining Experience
           </Typography>
         </Grid>
         <Grid item style={{ marginBottom: "1rem" }} align="center">
@@ -46,7 +51,7 @@ const Info = (props, ref) => {
           </Container>
         </Grid>
         <Grid item>
-          <Grid item container style={{ marginBottom: "1rem" }}>
+          <Grid item container style={{ marginBottom: "3rem" }}>
             <Grid item>
               <img
                 src={bowlLogo}
