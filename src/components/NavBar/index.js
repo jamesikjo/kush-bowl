@@ -13,7 +13,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import mainLogo from "../../assets/images/main-logo.png";
 import kushLogo from "../../assets/images/kush-logo.png";
 import NavLinks from "./NavLinks";
 import MenuDialog from "../../Menu";
