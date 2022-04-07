@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
-    height: "40vh",
+    height: 450,
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(${catering})`,
   },
 });
@@ -30,10 +30,13 @@ const Catering = () => {
         justifyContent="center"
         style={{ height: "100%" }}
       >
-        <Grid item style={{ marginBottom: "0.5rem" }}>
+        <Grid item style={{ marginBottom: "1rem" }}>
           <Typography
             variant="h4"
-            style={{ color: theme.palette.primary.contrastText }}
+            style={{
+              color: theme.palette.primary.contrastText,
+              fontWeight: 500,
+            }}
           >
             Catering Available
           </Typography>
@@ -41,7 +44,8 @@ const Catering = () => {
         <Grid item>
           <Button
             variant="contained"
-            color="secondary"
+            size="large"
+            style={{ backgroundColor: "#E8F4EA" }}
             onClick={() => location.push("/contact")}
           >
             Contact Us

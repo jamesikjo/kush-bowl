@@ -3,7 +3,6 @@ import {
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
   makeStyles,
@@ -11,24 +10,27 @@ import {
   Typography,
   Backdrop,
   Link,
+  Box,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: "100%",
-    width: 300,
+    width: 400,
+    [theme.breakpoints.down("sm")]: {
+      width: 360,
+    },
     display: "flex",
     flexDirection: "column",
   },
   cardImg: {
+    height: "100%",
+    width: "100%",
     borderRadius: 3,
     paddingTop: "56.25%",
   },
   cardContent: {
     flexGrow: 1,
-    paddingBottom: 0,
   },
-  cardActions: { justifyContent: "center" },
   modal: {
     display: "flex",
     alignItems: "center",
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProductCard({ name, desc, img, category }) {
+export default function ProductCard({ name, desc, img }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -52,7 +54,7 @@ export default function ProductCard({ name, desc, img, category }) {
   };
 
   return (
-    <Card className={classes.card} elevation={3}>
+    <Card className={classes.card} elevation={2}>
       <CardActionArea onClick={handleOpen}>
         <CardMedia
           className={classes.cardImg}
@@ -62,28 +64,25 @@ export default function ProductCard({ name, desc, img, category }) {
         />
       </CardActionArea>
       <CardContent className={classes.cardContent}>
-        <Typography color="primary" variant="body1">
-          <b>{name}</b>
-        </Typography>
-        <Typography color="primary" variant="body2">
-          {desc}
-        </Typography>
-      </CardContent>
-      <CardActions className={classes.cardActions}>
+        <Box mb={2}>
+          <Typography color="primary" variant="h6" style={{ fontWeight: 700 }}>
+            {name}
+          </Typography>
+          <Typography color="primary" variant="body1">
+            {desc}
+          </Typography>
+        </Box>
         <Link
           href="https://kushbowl.square.site/"
           rel="noopener noreferrer"
           target="_blank"
           style={{ textDecoration: "inherit" }}
         >
-          <Button
-            variant="outlined"
-            style={{ marginBottom: "0.5rem", fontSize: "0.7rem" }}
-          >
+          <Button variant="outlined" style={{ marginBottom: "0.5rem" }}>
             Order Here
           </Button>
         </Link>
-      </CardActions>
+      </CardContent>
 
       <Modal
         className={classes.modal}

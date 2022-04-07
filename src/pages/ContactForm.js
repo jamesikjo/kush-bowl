@@ -52,12 +52,22 @@ const ContactForm = () => {
         <Container maxWidth="xs" component="main">
           <Grid container spacing={2} direction="column">
             <Typography
+              color="secondary"
+              variant="body1"
+              align="center"
+              justify="center"
+              style={{ fontWeight: 700 }}
+            >
+              Contact
+            </Typography>
+            <Typography
               color="primary"
               variant="h4"
               align="center"
               justify="center"
+              style={{ fontWeight: 700 }}
             >
-              <b>Contact Us</b>
+              Get in touch
             </Typography>
             <Grid item xs={12}>
               <Typography color="primary" variant="body2">

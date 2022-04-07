@@ -30,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
   logoBtn: {
     flexGrow: 1,
   },
+  menu: {
+    "& .MuiList-padding": {
+      paddingTop: "0px",
+      paddingBottom: "0px",
+    },
+  },
 }));
 
 const NavBar = ({ inViewInfo }) => {
@@ -59,9 +65,20 @@ const NavBar = ({ inViewInfo }) => {
     <nav>
       <AppBar position="fixed" className={classes.appBar}>
         <Container maxWidth="xl">
-          <Toolbar disableGutters={matchMD && true}>
+          <Toolbar
+            disableGutters={matchMD && true}
+            style={{ justifyContent: "space-between" }}
+          >
             <Hidden mdUp>
-              <IconButton edge="start" onClick={handleClick} aria-label="menu">
+              <Button
+                color="primary"
+                variant="text"
+                onClick={() => history.push("/")}
+                style={{ backgroundColor: "transparent" }}
+              >
+                <img src={kushLogo} alt="nav-logo" style={{ height: 40 }} />
+              </Button>
+              <IconButton onClick={handleClick} aria-label="menu">
                 <MenuIcon />
               </IconButton>
               <Menu
@@ -70,6 +87,7 @@ const NavBar = ({ inViewInfo }) => {
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
+                className={classes.menu}
               >
                 <NavMenuList
                   handleClose={handleClose}
@@ -89,7 +107,7 @@ const NavBar = ({ inViewInfo }) => {
                   onClick={() => history.push("/")}
                   style={{ backgroundColor: "transparent" }}
                 >
-                  <img src={kushLogo} alt="nav logo" style={{ height: 55 }} />
+                  <img src={kushLogo} alt="nav-logo" style={{ height: 60 }} />
                 </Button>
               </div>
               <NavLinks handleMenuOpen={handleMenuOpen} />

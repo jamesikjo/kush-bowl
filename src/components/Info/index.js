@@ -16,9 +16,6 @@ import Hours from "./Hours";
 const useStyles = makeStyles({
   mainContainer: {
     height: "100%",
-    backgroundColor: "#e8f4ea",
-    paddingTop: "5rem",
-    paddingBottom: "5rem",
   },
 });
 
@@ -30,46 +27,41 @@ const Info = (props, ref) => {
   return (
     <Box ref={ref} className={classes.mainContainer} component="section">
       <Grid container direction="column" alignItems="center">
-        <Grid item className={classes.mainTitle} align="center">
-          <Typography
-            color="primary"
-            variant="h4"
-            gutterBottom
-            style={{ fontWeight: "bold" }}
-          >
-            A Higher Dining Experience
-          </Typography>
-        </Grid>
-        <Grid item style={{ marginBottom: "1rem" }} align="center">
-          <Container maxWidth="md">
-            <Typography color="primary" variant="subtitle1">
+        <Grid item align="center">
+          <Container maxWidth="lg">
+            <Typography
+              color="primary"
+              variant="h3"
+              gutterBottom
+              style={{ fontWeight: 700 }}
+            >
+              A Higher Dining Experience
+            </Typography>
+            <Typography color="secondary" variant="h6" gutterBottom>
               We are a family friendly teriyaki bowl restaurant based in
               Cypress, CA. We specialize in teriyaki bowls, kebabs and
               breakfast. Everything is fresh and made to order. Low prices and
-              hearty portions. Conveniently located inside the Cypress Auto Spa
+              hearty portions.
+            </Typography>
+            <Typography color="secondary" variant="h6">
+              Conveniently located inside the Cypress Auto Spa
             </Typography>
           </Container>
         </Grid>
-        <Grid item>
-          <Grid item container style={{ marginBottom: "3rem" }}>
-            <Grid item>
-              <img
-                src={bowlLogo}
-                alt="bowl logo"
-                style={{ width: 50, height: 50 }}
-              />
-            </Grid>
-            <Grid item style={{ margin: matchSM ? "0rem 3rem" : "0rem 5rem" }}>
-              <YelpButtonLink />
-            </Grid>
-            <Grid item>
-              <img
-                src={bowlLogo}
-                alt="bowl logo"
-                style={{ width: 50, height: 50 }}
-              />
-            </Grid>
-          </Grid>
+        <Grid item style={{ margin: "4em 0em" }}>
+          <Box style={{ display: "flex" }}>
+            <img
+              src={bowlLogo}
+              alt="bowl logo"
+              style={{ width: 80, height: 80 }}
+            />
+            <YelpButtonLink />
+            <img
+              src={bowlLogo}
+              alt="bowl logo"
+              style={{ width: 80, height: 80 }}
+            />
+          </Box>
         </Grid>
         <Grid item align="center">
           <Hours />

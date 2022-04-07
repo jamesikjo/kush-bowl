@@ -17,6 +17,7 @@ function Hero() {
   const matchSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleMenuOpen = () => {
+    //open pdf menu dialog
     setOpen(true);
   };
 
@@ -26,22 +27,29 @@ function Hero() {
 
   return (
     <Box component="main" style={{ height: "50%", marginBottom: "3em" }}>
-      <Grid container direction="column" justifyContent="center">
-        <Grid item container direction="column" align="center">
-          <Grid item>
-            <img
-              src={kushLogo}
-              alt="store logo"
-              style={{ width: matchSM ? 280 : 340 }}
-            />
-          </Grid>
-          <Grid item style={{ marginBottom: "0.5rem" }}>
-            <Typography variant="body1" color="primary">
-              <b>5890 Lincoln Ave Cypress, CA 90630</b>
-            </Typography>
-          </Grid>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item>
+          <img
+            src={kushLogo}
+            alt="store logo"
+            style={{ width: matchSM ? 280 : 420 }}
+          />
+        </Grid>
 
-          <Grid item style={{ marginBottom: "1em" }}>
+        <Grid item style={{ marginBottom: "2em" }}>
+          <Typography
+            variant="h6"
+            color="secondary"
+            style={{ fontWeight: 700, marginBottom: "1em" }}
+          >
+            5890 Lincoln Ave Cypress, CA 90630
+          </Typography>
+          <Box style={{ display: "flex", justifyContent: "center" }}>
             <Button
               variant="outlined"
               onClick={handleMenuOpen}
@@ -57,10 +65,10 @@ function Hero() {
             >
               <Button variant="outlined">Order Takeout</Button>
             </a>
-          </Grid>
-          <Grid item align="center">
-            <img src={hero} alt="hero" style={{ width: matchSM ? 320 : 400 }} />
-          </Grid>
+          </Box>
+        </Grid>
+        <Grid item>
+          <img src={hero} alt="hero" style={{ width: matchSM ? 320 : 400 }} />
         </Grid>
       </Grid>
       <MenuDialog open={open} handleMenuClose={handleMenuClose} />

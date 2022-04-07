@@ -5,6 +5,7 @@ import Catering from "../components/Catering";
 import Info from "../components/Info";
 import Layout from "./../components/Layout/index";
 import { useInView } from "react-intersection-observer";
+import { Box, Container } from "@material-ui/core";
 
 const LandingPage = () => {
   const [refInfoSection, inViewInfo] = useInView({
@@ -12,10 +13,17 @@ const LandingPage = () => {
   });
   return (
     <Layout inViewInfo={inViewInfo}>
-      <Hero />
-      <Info ref={refInfoSection} />
+      <Box style={{ padding: "4.5em 0em" }}>
+        <Hero />
+      </Box>
+      <Box style={{ padding: "10em 0em", backgroundColor: "#e8f4ea" }}>
+        <Info ref={refInfoSection} />
+      </Box>
+
       <Catering />
-      <Favorites />
+      <Container maxWidth="lg" style={{ padding: "10em 0em" }}>
+        <Favorites />
+      </Container>
     </Layout>
   );
 };
